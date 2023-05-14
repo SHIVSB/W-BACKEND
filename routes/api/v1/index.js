@@ -13,9 +13,9 @@ router.post(
   userController.setBubbleColor
 );
 router.post(
-  "/updategradientcolor",
+  "/addmessagedelay",
   authController.authMiddleware,
-  userController.setGradientColor
+  userController.addMessageDelay
 );
 
 router.post(

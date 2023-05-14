@@ -167,9 +167,9 @@ userController.setBubbleColor = expressAsyncHandler(async (req, res) => {
   }
 });
 
-userController.setGradientColor = expressAsyncHandler(async (req, res) => {
+userController.addMessageDelay = expressAsyncHandler(async (req, res) => {
   let responseData = {
-    msg: "Error inupdating the user",
+    msg: "Error in updating the user",
     success: false,
     result: "",
   };
@@ -180,8 +180,7 @@ userController.setGradientColor = expressAsyncHandler(async (req, res) => {
     const updatedUser = await User.findByIdAndUpdate(
       _id,
       {
-        gradientFrom: req.body.gradientFrom,
-        gradientTo: req.body.gradientTo,
+        delay: req.body.delay,
       },
       {
         new: true,
@@ -189,7 +188,7 @@ userController.setGradientColor = expressAsyncHandler(async (req, res) => {
       }
     );
 
-    responseData.msg = "User gradient color updated successfully";
+    responseData.msg = "User message delay updated successfully";
     responseData.success = true;
     responseData.result = updatedUser;
 

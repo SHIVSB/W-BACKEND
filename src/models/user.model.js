@@ -29,6 +29,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "#fff",
     },
+    delay: {
+      type: Number,
+      default: 1,
+    },
     gradientFrom: {
       type: String,
       default: "#DDEEED",
